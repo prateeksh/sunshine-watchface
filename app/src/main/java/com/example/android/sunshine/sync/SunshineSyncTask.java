@@ -103,7 +103,7 @@ public class SunshineSyncTask {
                         DataMap dataMap = putDataMapRequest.getDataMap();
                         dataMap.putString(KEY_HIGH_TEMP, cursor.getString(cursor.getColumnIndex(WeatherContract.WeatherEntry.COLUMN_MAX_TEMP)));
                         dataMap.putString(KEY_LOW_TEMP, cursor.getString(cursor.getColumnIndex(WeatherContract.WeatherEntry.COLUMN_MIN_TEMP)));
-                        dataMap.putString(KEY_WEATHER_ID, cursor.getString(cursor.getColumnIndex(WeatherContract.WeatherEntry.COLUMN_WEATHER_ID)));
+                        dataMap.putInt(KEY_WEATHER_ID, cursor.getInt(cursor.getColumnIndex(WeatherContract.WeatherEntry.COLUMN_WEATHER_ID)));
                         PutDataRequest putDataRequest = putDataMapRequest.asPutDataRequest();
                         Wearable.DataApi.putDataItem(apiClient, putDataRequest);
 
